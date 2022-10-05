@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../images/favicon.png" type="">
+
+  <title> Seven Diner </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+    <div class="hero_area">
+      <div class="bg-box">
+        <img src="../images/hero-bg.jpg" alt="">
+      </div>
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="/UserAdmin">
+              <span>
+                Seven Diner
+              </span>
+            </a>
+  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  mx-auto" style="padding-left:700px">
+                
+                <li class="nav-item">
+                  <a class="nav-link" onclick="window.location.href='/LogoutController'">Log Out</a>
+                
+              </li>
+              </ul>
+              
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <section class="form_section layout_padding">
+        <div class="container">
+          <div class="heading_container">
+            <h2>
+              Create an Account
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form_container">
+                <form method="post" action="/UserAdminCreateAccountController">
+                  <div>
+                    <label>Username: </label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z0-9-]+" title="Invalid username, must not contain symbols" name="username" id="username" placeholder="Username" required />
+                  </div>
+                  <div>
+                    <label>Password: </label>
+                    <input type="text" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    title="Invalid password, must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    name="password" id="password" placeholder="Password" required />
+                  </div>
+                  <div>
+                    <label>Email: </label>
+                    <input type="text" class="form-control" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" name="email" id="email" placeholder="Email" required />
+                  </div>
+                  <div>
+                    <label>First Name: </label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z\s]+" title="Invalid name, must contain letters only" name="firstName" id="firstName" placeholder="First Name" required />
+                  </div>
+                  <div>
+                    <label>Last Name: </label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z\s]+" title="Invalid name, must contain letters only" name="lastName" id="lastName" placeholder="Last Name" required />
+                  </div>
+                  <div>
+                    <label>Role: </label>
+                    <select class="form-control" name="roleName"  required >
+                      <option value="" disabled selected hidden>
+                        role name
+                      </option>
+                    <% if(data.length> 0) { %>
+                      <% data.forEach(function(role) { %>
+                        <option>
+                          <%= role.roleName %>
+                        </option>
+                              <% }); %>
+        
+                    <% } else { %>
+                        <option>No role</option>
+                    <% } %>
+                    </select>
+                  </div>
+                  <% if ( expressError.length > 0 ) { %>
+                    <p id="flashMsg" class="error-msg"><%= expressError %> </p>
+                <% } %>
+                  <div class="btn_box">
+                    <button class="yellow-button" type="submit">
+                      Create Account
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../images/favicon.png" type="">
+
+  <title> Seven Diner </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="../images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/Staff">
+            <span>
+              Seven Diner
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto" style="padding-left:700px">
+              
+            </ul>
+            
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+
+  <section class="image_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Create an Order
+        </h2>
+      </div>
+
+      
+      <br/>
+      <div id="menu" class="heading_container heading_center">
+      <h5 style="padding-top: 10px;">
+        Please enter a menu name:
+        
+      </h5>
+      
+        <form action="/StaffSearchMenuItemController" method="post">
+          <div>
+            <input type="text" class="form-control" name="menuName" id="menuName" placeholder="Menu Name" />
+            
+          </div>
+          <div>
+            <button class="yellow-button" type="submit">
+              Search
+            </button>
+          </div>
+          
+          
+         </form>
+        </div>
+        <div class="heading_container heading_center">
+          <a href="#cart"><button class="yellow-button">Go to Cart</button></a>
+        </div>
+        <br/>
+          <br/>
+        
+      <ul class="filters_menu" style="margin: 5px 0 20px 0;">
+        
+        <li class="active" onclick="location.href='/Staff/StaffCreateOrder';">All</li>
+        <li data-filter=".meat">Meats</li>
+        <li data-filter=".vegetables">Vegetables</li>
+        <li data-filter=".misc">Misc</li>
+        
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+          <% if(data.length> 0) { %>
+            
+            <% data.forEach(function(menuitem) { %>
+              <form action="/AddToCart" method="post">
+                <div class="col-sm-6 col-lg-4 all <%= menuitem.type %>">
+                  <div class="menubox">
+                      <div class="detail-box">
+                        <img src="../images/<%= menuitem.menuName %>.jpg" style="width:  100px; height: 100px; float:right;">
+                        <h5>
+                          <%= menuitem.menuName %>
+                        </h5>
+                        
+                        <p style="height:40px;">
+                          <%= menuitem.description %>
+                        </p>
+                        <br>
+                        <div class="options">
+                          <h5>
+                            $<%= menuitem.price %>
+                          </h5>
+                          
+                          <input type="hidden" name="menuID" value=<%= menuitem.menuID %>>
+                          <input type="hidden" name="menuName" value="<%= menuitem.menuName %>">
+                          <input type="hidden" name="price" value=<%= menuitem.price %>>
+                          <input type="hidden" name="description" value="<%= menuitem.description %>">
+                          <input style="width:70px;" type="text" name="quantity" placeholder="Qty">
+                          <button class="yellow-button-small" type="submit">
+                            Add
+                          </button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <% }); %>
+
+          <% } else { %>
+              <h3>No Results</h3>
+          <% } %>
+        </div>
+      </div>
+
+      <div id="cart" style="padding-top: 50px;" class="heading_container heading_center">
+        <h3>
+          Item Cart
+        </h3>
+      </div>
+      <div class="heading_container heading_center">
+        <a href="#menu"><button class="yellow-button">Go to Menu</button></a>
+      </div>
+
+      <div class="filters-content">
+        <div class="row grid">
+        <% if(cData.length> 0) { %>
+          
+          <% cData.forEach(function(currentorder) { %>
+            <form action="/StaffDeleteMenuItemController" method="post">
+              <div class="col-sm-6 col-lg-4 all meat vegetables misc">
+                <div class="menubox">
+                    <div class="detail-box">
+                      <h5>
+                        <%= currentorder.menuName %>
+                      </h5>
+                      <p>
+                        Quantity: <%= currentorder.quantity %>
+                      </p>
+                      <div class="options">
+                        <h5>
+                          $<%= currentorder.price %> each
+                        </h5>
+                        
+                        <input type="hidden" name="placeholderID" value=<%= currentorder.placeholderID %>>
+                        <input type="hidden" name="menuName" value="<%= currentorder.menuName %>">
+                        <input type="hidden" name="price" value=<%= currentorder.price %>>
+                        <input type="hidden" name="quantity" value=<%= currentorder.quantity %>>
+                        <button class="red-button-small" type="submit">
+                          Delete
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <% }); %>
+        <% } else { %>
+        <% } %>
+        </div>
+        <% if(cData.length> 0) { %>
+          <% var totalprice = 0 %>
+          <% cData.forEach(function(currentorder) { %>
+            <% totalprice = totalprice + (currentorder.price * currentorder.quantity) %>
+          <% }); %>
+          <% totalprice = totalprice.toFixed(2) %>
+        <% } else { %>
+        <% } %>
+        <% if(cData.length> 0) { %>
+          <div style="padding-top: 50px;" class="heading_container heading_center">
+            <h3>Total Price: $<%= totalprice %></h3>
+          </div>
+        <% } else { %>
+          <% } %>
+      </div>
+    </div>
+  </section>
+  <section class="login_section layout_padding2">
+    <div class="container">
+      <form method="post" action="/StaffCreateOrderController" >
+      <div class="row">
+        <div class="col-md-6" style="border-right:1px solid white; height:550px;">
+          <div class="heading_container">
+            <h2>
+              How would you like to pay?
+            </h2>
+          </div>
+          <div style=" width: 100%; text-align: left;">
+            <label style="display:inline-block">
+              <input type="radio" name="paymentMethod" value="visa" required>
+              <img src="../images/visa.png" width="200px">
+            </label>
+            <label style="display:inline-block">
+              <input type="radio" name="paymentMethod" value="mastercard" >
+              <img src="../images/mastercard.png" width="200px">
+            </label>
+            <label style="display:inline-block">
+              <input type="radio" name="paymentMethod" value="american express" >
+              <img src="../images/ax.png" width="200px">
+            </label>
+         </div>
+        </div>
+        <div class="col-md-6" style="height:550px;">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Please fill out the details
+              </h2>
+            </div>
+            
+              <div class="form-group">
+                <label for="tablenumber">Table Number</label>
+                <input type="text" class="form-control" name="tableNumber" id="tableNumber" pattern="[0-9]+" title="Invalid table number, must contain numbers only" placeholder="Table Number" required />
+              </div>
+              <div class="form-group">
+                <label for="username">Credit Card Number</label>
+                <input type="text" class="form-control" name="ccNumber" id="ccNumber" pattern="[0-9]+" title="Invalid credit card number, must contain numbers only" placeholder="Credit Card Number" required />
+              </div>
+              <div class="form-group">
+                <label for="password">CVV/CVC</label>
+                <input type="text" class="form-control" name="cvv" id="cvv" pattern="[0-9]+" title="Invalid cvv/cvc, must contain numbers only" placeholder="CVV/CVC" required />
+              </div>
+              <div class="form-group">
+                <label for="password">Credit Card Expiry Date</label>
+                <input type="date" class="form-control" name="expDate" id="expDate" placeholder="Expiry Date" required />
+              </div>
+              
+              <button class="yellow-button" type="submit">
+                
+                  Submit
+          
+              </button>
+            
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </section>
+  <span id="displayYear"></span>
+
+  
+
+  <!-- jQuery -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="../js/bootstrap.js"></script>
+  <!-- isotope js -->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <!-- custom js -->
+  <script src="../js/custom.js"></script>
+  
+
+</body>
+
+</html>
+
+
+
+
