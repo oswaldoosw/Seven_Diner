@@ -53,7 +53,7 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 ### Cloning the Repository
 - Open Git Bash
 - Using the cd command, navigate to the directory you want the repository to be cloned on
-- Type "git clone https<nolink>://github.com/oswaldoosw/Seven_Diner.git"
+- Type git clone "https<nolink>://github.com/oswaldoosw/Seven_Diner.git"
 
 ### Setting up the Database
 - Open XAMPP Control Panel
@@ -65,7 +65,7 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 ### Running the Application
 - Open Terminal
 - Using the cd command, navigate to the Seven_Diner folder (e.g. cd Desktop/Seven_Diner)
-- Type "node index.js"
+- Type node index.js
 - Open your browser and go to "http<nolink>://localhost:3000/"
 - The landing page will be shown
 
