@@ -71,20 +71,20 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 
 
 ### Login Details
-User Admin
-username: useradmin1
-password: useradmin123
+User Admin <br/>
+Username: useradmin1 <br/>
+Password: useradmin123
 
-Manager
-username: manager1
-password: manager123
+Manager <br/>
+Username: manager1 <br/>
+Password: manager123
 
-Staff
-username: staff1
-password: staff123
+Staff <br/>
+Username: staff1 <br/>
+Password: staff123
 
-Restaurant Owner
-username: owner1
-password: owner123
+Restaurant Owner <br/>
+Username: owner1 <br/>
+Password: owner123
 
 
