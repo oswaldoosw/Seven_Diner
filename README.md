@@ -53,12 +53,12 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 ### Cloning the Repository
 - Open Git Bash
 - Using the cd command, navigate to the directory you want the repository to be cloned on
-- Type "git clone https://github.com/oswaldoosw/Seven_Diner.git"
+- Type "git clone https<nolink>://github.com/oswaldoosw/Seven_Diner.git"
 
 ### Setting up the Database
 - Open XAMPP Control Panel
 - Press Start button for Apache and MySQL Module
-- Press Admin button for MySQL or go to "http://localhost/phpmyadmin/"
+- Press Admin button for MySQL or go to "http<nolink>://localhost/phpmyadmin/"
 - Create a new database called "restaurantapp"
 - Import the restaurantapp.sql file, which is located inside the database folder (Seven_Diner/database/restaurantapp.sql) to the database "restaurantapp"
 
@@ -66,7 +66,7 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 - Open Terminal
 - Using the cd command, navigate to the Seven_Diner folder (e.g. cd Desktop/Seven_Diner)
 - Type "node index.js"
-- Open your browser and go to "http://localhost:3000/"
+- Open your browser and go to "http<nolink>://localhost:3000/"
 - The landing page will be shown
 
 
