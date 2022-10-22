@@ -57,8 +57,8 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 
 ### Setting up the Database
 - Open XAMPP Control Panel
-- Press Start button for Apache and MySQL Module
-- Press Admin button for MySQL or go to "http<nolink>://localhost/phpmyadmin/"
+- Press the Start button for Apache and MySQL Module
+- Press the Admin button for MySQL or go to "http<nolink>://localhost/phpmyadmin/"
 - Create a new database called "restaurantapp"
 - Import the restaurantapp.sql file, which is located inside the database folder (Seven_Diner/database/restaurantapp.sql) to the database "restaurantapp"
 
