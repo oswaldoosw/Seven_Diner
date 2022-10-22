@@ -88,5 +88,6 @@ Password: owner123
 
 ## References
   - <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Bootstrap v4.3.1</a>
+  - <a href="https://expressjs.com/en/guide/routing.html">Express.js Routing Guide</a>
   - CSIT314 lecturers and tutors for helping with the project
   
