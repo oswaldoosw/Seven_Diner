@@ -69,7 +69,6 @@ Please refer to the Sequence Diagram for user login below for an illustration of
 - Open your browser and go to "http<nolink>://localhost:3000/"
 - The landing page will be shown
 
-
 ### Login Details
 User Admin <br/>
 Username: useradmin1 <br/>
