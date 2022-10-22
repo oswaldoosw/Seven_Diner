@@ -87,4 +87,7 @@ Restaurant Owner <br/>
 Username: owner1 <br/>
 Password: owner123
 
-
+## References
+  - <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Bootstrap v4.3.1</a>
+  - CSIT314 lecturers and tutors for helping with the project
+  
