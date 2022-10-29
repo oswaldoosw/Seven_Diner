@@ -8,6 +8,17 @@ This project is a web application for a made-up restaurant, built using Express.
 - MySQL
 - EJS
 
+## Demo Video
+### Customer
+
+
+https://user-images.githubusercontent.com/103481357/198850057-07aff000-96d6-4c97-bf80-324841b9bc36.mp4
+
+
+
+
+
+
 ## User Stories (Simplified)
 - As a customer, I want to be able to view the menu, so that I can decide on what menu items to order.
 - As a customer, I want to be able to search for specific menu items, so that it will be easier to go through the menu.
