@@ -10,12 +10,7 @@ This project is a web application for a made-up restaurant, built using Express.
 
 ## Demo Video
 ### Customer
-
-
-https://user-images.githubusercontent.com/103481357/198850057-07aff000-96d6-4c97-bf80-324841b9bc36.mp4
-
-
-
+https://user-images.githubusercontent.com/103481357/198850161-f003d020-0360-47c9-94cf-bdab8b0ff9eb.mp4
 
 
 
