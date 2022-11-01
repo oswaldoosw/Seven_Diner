@@ -1,6 +1,6 @@
 # Seven_Diner
 ## Description
-This project is a web application for a made-up restaurant, built using Express.js. There are some features, such as food ordering for customers. Managers and restaurant staff can also do administrative tasks, related to the database. This project is created as part of the CSIT314 course project, in which the Entity-Control-Boundary pattern is a requirement.
+This project is a web application for a made-up restaurant, built using Express.js. There are some features, such as food ordering for customers. Managers and restaurant staff can also do administrative tasks, related to the database. This project is created using the Entity-Control-Boundary pattern.
 
 ### Framework/Library/Database used
 - Express.js
@@ -95,5 +95,4 @@ Password: owner123
 ## References
   - <a href="https://getbootstrap.com/docs/4.3/getting-started/download/">Bootstrap v4.3.1</a>
   - <a href="https://expressjs.com/en/guide/routing.html">Express.js Routing Guide</a>
-  - CSIT314 lecturers and tutors for helping with the project
   
